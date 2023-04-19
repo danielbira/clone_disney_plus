@@ -1,5 +1,7 @@
 @use 'variaveis';
 @use 'hero';
+@use 'shows';
+@use 'plans';
 
 @font-face{
     font-family: Avenir;
@@ -21,8 +23,9 @@
 }
 
 @mixin title($fontSize: 40px){
-    @include text(f$fontSize);
+    @include text($fontSize);
     color: variaveis.$corTextoSecudario;
+    
 }
 
 
@@ -30,11 +33,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Avenir, sans-serif;
 }
 
 body{
     background-color: variaveis.$corDeFundo;
-    font-family: Avenir, sans-serif
+    
 }
 
 .text--big{
@@ -50,7 +54,7 @@ body{
 }
 
 .title--big{
-    @include title(44px)
+    @include title(44px);
 }
 
 .title{
@@ -65,4 +69,17 @@ body{
     @include text(18px);
     color: variaveis.$corTextoSecudario;
     text-decoration: underline;
+}
+
+.button{
+    display: block;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    color: variaveis.$corTextoSecudario;
+    background-color: #6421ff;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 2vh;
+    margin-bottom: 8px;
 }
